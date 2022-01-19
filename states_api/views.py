@@ -15,5 +15,4 @@ class NigerianStateView(generics.CreateAPIView):
                 name = GovernorSerializer(governor_of_that_state).data.get('name', None)
                 deputy = DeputyGovernorSerializer(DeputyGovernor.objects.get(state_id=states.pk)).data.get('name',
                                                                                                            None)
-                state = NigerianStateSerializer(states).data.get('name_of_state', None)
-                return Response({"Name": name, "Name of State": f"{state} State", "Deputy Governor": deputy})
+                return Response({"Governor": name, "Deputy Governor": deputy})
