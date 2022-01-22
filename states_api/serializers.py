@@ -23,7 +23,3 @@ class NigerianStateSerializer(serializers.ModelSerializer):
     class Meta:
         model = NigerianState
         fields = "__all__"
-
-
-
-
