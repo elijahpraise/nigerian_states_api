@@ -1,4 +1,3 @@
-from django.urls import include
 from rest_framework import generics
 from rest_framework.response import Response
 
@@ -17,5 +16,5 @@ class NigerianStateView(generics.CreateAPIView):
             deputy = DeputyGovernorSerializer(DeputyGovernor.objects.get(state_id=state.pk)).data.get('name')
             return Response({"Governor": name, "Deputy Governor": deputy})
         else:
-            return Response({'error': 'state does not exist'})
+            return Response({'error': 'State does not exist in Nigeria. Please type in a state in Nigeria'})
 
